@@ -1,0 +1,116 @@
+## SPRINT 1
+
+### Day 0
+
+#### Copied files from download
+copy files (using terminal)
+cp -i sourceFILE destinationFILE
+    cp - copy command
+    -i flag - interactive, prevents overwrites if name of destination is already present, otherwise it will not prompt and overwrite the destination
+
+cp -i hello.txt EmailJohnWhite.txt
+
+cp -R sourceFOLDER destinationFOLDER
+    -R copy folder structure from one location to another
+
+cp -R 01\ -\ JavaScript\ Drum\ Kit/ ../01-DrumKit
+
+#### Organised reading material
+Converted  the chapters of [YDKJS Up and Coming](https://github.com/getify/You-Dont-Know-JS/tree/master/up%20%26%20going) into audio.  I used the standard Alex voice as the pronunciation is better than Moira.
+
+#### First Listen to audio
+
+ALT + COMMAND + I to open browser developer console on mac.
+
+console.log(); print to browser console
+alert(); print to browser popup message box, use quotes to display string
+`warning = alert("Leave Here fran, Or you will learn too much");`
+prompt(); request input via popup input message box, use quotes to display string
+`greeting = prompt("hello fran");`
+
+Converting between types @ 18:40
+
+number types can be rounded down using **.toFixed()** function
+
+**var** declare a variable (result may change later in program), lowercase underscore separated words
+`var bank_balance = 302.11;`
+
+**const** declare a constant (result will never change in program), UPPERCASE, underscore separated words
+`const ACCOUNT_NUMBER = 302.11;`
+
+use curly braces to designate a code block, a set of related statements that should execute as a whole.
+
+### Day 1
+
+I repeated the code to print amount in the function section, and added a prompt to take input from the user.  When i used the prompt dialog i kept receiving error messages
+
+Uncaught TypeError: amount.toFixed is not a function
+    at formatAmount (<anonymous>:5:22)
+    at <anonymous>:10:10
+
+Initially I wasnt declaring amount as a variable, updating this didnt fix it.  Looking at the error message again, The printAmount function worked, the formatAmount function didnt.  The difference was the amount variable.  I explicitly cast the contents of the prompt after receiving it to a number format and the issue was resolved.
+
+    function printAmount(amt) {
+        console.log(amt.toFixed(2));
+    }
+    function formatAmount() {
+        return "$" + amount.toFixed(2);
+    }
+    var amount = 0.00;
+    amount = prompt("Please enter a dollar amount you want to spend");
+    amount = Number(amount);
+    printAmount(amount * 2);
+    amount = formatAmount();
+    console.log(amount);
+
+
+    7294.80
+    $3647.40
+
+
+scope of variables is restricted to the boundary of the brackets they are defined inside.
+
+1. variables defined at the root of the file, ie outside brackets are available everywhere.
+2. statements in a parent set of brackets cannot access variables in a child set of brackets.
+3. statements in a child of of brackets can access variables in a parent set of brackets.
+
+
+create repo, record git commands fro remote command line repo creation
+
+
+
+
+
+
+
+
+
+
+#### Changes to my process
+
+More than one person will be committing code, To make it easier to search the repository for a persons project, I suggest we use branches to identify overall work, followed by tags to reference specific units of work.  **E.g.** on branch fran, after finishing Project 1 drum kit and documenting all my learnings, I will have Tag Project-1-Drum-Kit.  I liked the comparison of Branches vs Tags, mutable references vs immutable references in the following article.  [Branches vs Tags](http://alblue.bandlem.com/2011/04/git-tip-of-week-tags.html)
+
+I was using the browser (chrome) for initially running my javascript examples but i found that it wasnt great.  Initially I was looking at running it via node on command line, but I found that I could setup sublime to build and run a file that was open and display the result at the bottom of the editor. [Sublime Text Build System](https://pawelgrzybek.com/javascript-console-in-sublime-text/)
+
+1. Atom can run javascript in editor but it makes my mac turn into Hairdryer.
+2. Why? Syntax highlighting, more forgiving to edit, I believe larger text size in sublime is better to read than small text in chrome dev console
+3. Similar instructions for windows
+
+
+#### Blog Posts to read
+
+The following was a an article of browser developer tools [teamtreehouse blog entry](http://blog.teamtreehouse.com/mastering-developer-tools-console).
+
+1.
+2.
+3.
+4.
+
+[MDN expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+
+1.
+2.
+3.
+4.
+5.
+6.
