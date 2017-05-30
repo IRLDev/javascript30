@@ -75,17 +75,6 @@ scope of variables is restricted to the boundary of the brackets they are define
 3. statements in a child of of brackets can access variables in a parent set of brackets.
 
 
-create repo, record git commands fro remote command line repo creation
-
-
-
-
-
-
-
-
-
-
 #### Changes to my process
 
 More than one person will be committing code, To make it easier to search the repository for a persons project, I suggest we use branches to identify overall work, followed by tags to reference specific units of work.  **E.g.** on branch fran, after finishing Project 1 drum kit and documenting all my learnings, I will have Tag Project-1-Drum-Kit.  I liked the comparison of Branches vs Tags, mutable references vs immutable references in the following article.  [Branches vs Tags](http://alblue.bandlem.com/2011/04/git-tip-of-week-tags.html)
